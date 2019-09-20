@@ -53,10 +53,15 @@ h1 {
 .gif-image {
     font-size: 20px;
     text-align: center;
-    margin-left: 45%;
 }
 
 img {
     margin-left: 1%;
     border-color: white;
+}
+
+ln {
+    color: white;
+    font-weight: bold;
+    font size: 20px;
 }

@@ -1,14 +1,14 @@
 var topics = ["Star Wars", "Lord of the Rings", "Harry Potter", "Gears of War", "Mario", "JonTron", "Filthy Frank", "Donald Trump"];
 
-function addSearchBtns() {
+function ButtonGenerator() {
     $("#buttons").html("");
     for (i = 0; i < topics.length; i++) {
-        var $button = $("<input id='button1' type='button' class='btn btn-lg search-btn' />");
-        $button.val(topics[i]);
-        $("#buttons").append($button);
+        var gifButton = $("<input id='button1' type='button' class='btn btn-lg search-btn' />");
+        gifButton.val(topics[i]);
+        $("#buttons").append(gifButton);
     }
 }
-addSearchBtns();
+ButtonGenerator();
 $(document).on("click", ".btn", function(event) {
     event.preventDefault();
     $("#images").html("");
@@ -28,7 +28,7 @@ $(document).on("click", ".btn", function(event) {
         if (topics.length > 6) {
             topics.shift();
         }
-        addSearchBtns();
+        ButtonGenerator();
     }
     params.q = query;
     $.ajax({
@@ -36,13 +36,13 @@ $(document).on("click", ".btn", function(event) {
         method: "GET",
         success: function(r) {
             for (i = 0; i < params.limit; i++) {
-                var $img = $("<img>");
-                var $div = $("<div>");
-                var $rating = $("<h6>");
+                var gifImg = $("<img>");
+                var gifDiv = $("<div>");
+                var gifRating = $("<ln>");
                 var gifObj = r.data[i];
                 var gif = gifObj.images;
 
-                $img.attr({
+                gifImg.attr({
 
                     src: gif.fixed_height_still.url,
                     "data-animate": gif.fixed_height.url,
@@ -51,10 +51,10 @@ $(document).on("click", ".btn", function(event) {
                     class: "gif"
                 });
 
-                $div.addClass("gif-image");
-                $rating.text("Rating: " + gifObj.rating);
-                $div.append($img, $rating);
-                $("#images").append($div);
+                gifDiv.addClass("gif-image");
+                gifRating.text("Rated: " + gifObj.rating);
+                gifDiv.append(gifImg, gifRating);
+                $("#images").append(gifDiv);
             }
             $(".gif").on("click", function() {
                 var state = $(this).attr("data-state");
