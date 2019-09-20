@@ -1,0 +1,62 @@
+html {
+    background-color: black;
+    color: white;
+}
+
+.container-fluid {
+    background-color: black;
+}
+
+.title-search-bar {
+    color: white;
+    background-color: black;
+    padding-top: 10px;
+}
+
+#submit {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+#results {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 64px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.row {
+    background-color: black;
+    color: white;
+}
+
+#button1 {
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+    border-color: white;
+    font-weight: bold;
+}
+
+.search-bar {
+    margin-left: 85%;
+}
+
+.gif-image {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 45%;
+}
+
+img {
+    margin-left: 1%;
+    border-color: white;
+}
