@@ -1,5 +1,4 @@
 var topics = ["Star Wars", "Lord of the Rings", "Harry Potter", "Gears of War", "Mario", "JonTron", "Filthy Frank", "Donald Trump"];
-
 function ButtonGenerator() {
     $("#buttons").html("");
     for (i = 0; i < topics.length; i++) {
@@ -41,16 +40,13 @@ $(document).on("click", ".btn", function(event) {
                 var gifRating = $("<ln>");
                 var gifObj = r.data[i];
                 var gif = gifObj.images;
-
                 gifImg.attr({
-
                     src: gif.fixed_height_still.url,
                     "data-animate": gif.fixed_height.url,
                     "data-still": gif.fixed_height_still.url,
                     "data-state": "still",
                     class: "gif"
                 });
-
                 gifDiv.addClass("gif-image");
                 gifRating.text("Rated: " + gifObj.rating);
                 gifDiv.append(gifImg, gifRating);
